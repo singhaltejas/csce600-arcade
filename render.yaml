@@ -1,7 +1,7 @@
 databases:
   - name: arcade
-    databaseName: pg
-    user: tejassinghal
+    databaseName: arcade
+    user: arcade
     plan: free
 
 services:
