@@ -1,7 +1,7 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: arcade
+    databaseName: pg
+    user: tejassinghal
     plan: free
 
 services:
