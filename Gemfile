@@ -88,9 +88,9 @@ group :test do
   gem "ostruct"
 end
 
-# group :production do
-#   gem "pg"
-# end
+group :production do
+  gem "pg", ">= 1.4"
+end
 
 group :development, :production do
   gem "whenever"
