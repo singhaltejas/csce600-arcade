@@ -11,13 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_11_15_010055) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "aesthetics", force: :cascade do |t|
     t.integer "game_id"
     t.string "font", default: "Verdana, sans-serif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "colors"
-    t.json "labels"
+    t.jsonb "colors"
+    t.jsonb "labels"
   end
 
   create_table "bees", force: :cascade do |t|
@@ -25,7 +28,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_15_010055) do
     t.date "play_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "ranks"
+    t.jsonb "ranks"
   end
 
   create_table "dashboards", force: :cascade do |t|
@@ -60,17 +63,17 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_15_010055) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "game_id"
+    t.bigint "game_id"
     t.index ["game_id"], name: "index_roles_on_game_id"
     t.index ["user_id"], name: "index_roles_on_user_id"
   end
 
   create_table "settings", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "active_roles"
