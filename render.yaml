@@ -1,7 +1,7 @@
 databases:
-  - name: arcade
-    databaseName: arcade
-    user: arcade
+  - name: csce600_arcade
+    databaseName: csce600_arcade
+    user: tejas
     plan: free
 
 services:
